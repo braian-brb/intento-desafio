@@ -59,5 +59,5 @@ contenedor.save(objetoPrueba3);
 contenedor.save(objetoPrueba4);
 
 app.get('/products', (req, res) => {
-    res.send(contenedor.Container.getAll());
+    res.send(contenedor.getAll());
 })
