@@ -83,7 +83,7 @@ app.get('/productRandom', (req, res) => {
 
 
 
-        res.send(contenedor.getById(random));
+        res.send(await contenedor.getById(random));
     }
 
 
