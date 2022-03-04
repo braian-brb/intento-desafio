@@ -20,3 +20,10 @@ app.get('/visit', (req, res) => {
 app.get('/fyh', (req, res) => {
     res.send({fyh: moment().format('YYYY/MM/DD HH:mm:ss')});
 })
+
+
+const Container = require(/desafioBraianBilicic/container.js)
+
+app.get('/products', (req, res) => {
+    res.send(Container.getAll());
+})
