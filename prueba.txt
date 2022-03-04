@@ -70,5 +70,29 @@
     "price": 250,
     "thumbnail": "Imagen Espatula",
     "id": 12
+  },
+  {
+    "title": "Pinza Bremen",
+    "price": 3500,
+    "thumbnail": "Imagen Pinza Bremen",
+    "id": 13
+  },
+  {
+    "title": "Amoladora Bosch",
+    "price": 9800,
+    "thumbnail": "Imagen Amoladora Bosch",
+    "id": 14
+  },
+  {
+    "title": "Destornillador",
+    "price": 2300,
+    "thumbnail": "Imagen Destornillador",
+    "id": 15
+  },
+  {
+    "title": "Espatula",
+    "price": 250,
+    "thumbnail": "Imagen Espatula",
+    "id": 16
   }
 ]
