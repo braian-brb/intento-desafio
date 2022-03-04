@@ -24,6 +24,40 @@ app.get('/fyh', (req, res) => {
 
 const Container = require(/desafioBraianBilicic/container.js)
 
+
+const contenedor = new Container("./prueba.txt")
+
+let objetoPrueba = {
+    title: "Pinza Bremen",
+    price: 3500,
+    thumbnail: 'Imagen Pinza Bremen'
+}
+
+let objetoPrueba2 = {
+    title: "Amoladora Bosch",
+    price: 9800,
+    thumbnail: 'Imagen Amoladora Bosch'
+}
+
+let objetoPrueba3 = {
+    title: "Destornillador",
+    price: 2300,
+    thumbnail: 'Imagen Destornillador'
+}
+
+let objetoPrueba4 = {
+    title: "Espatula",
+    price: 250,
+    thumbnail: `Imagen Espatula`
+}
+
+
+
+contenedor.save(objetoPrueba);
+contenedor.save(objetoPrueba2);
+contenedor.save(objetoPrueba3);
+contenedor.save(objetoPrueba4);
+
 app.get('/products', (req, res) => {
-    res.send(Container.getAll());
+    res.send(contenedor.Container.getAll());
 })
