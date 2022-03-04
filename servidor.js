@@ -64,5 +64,5 @@ async function testeo() {
 
 
 app.get('/products', (req, res) => {
-    res.send(contenedor.getAll());
+    res.send(contenedor);
 })
