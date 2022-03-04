@@ -91,17 +91,19 @@ app.get('/productRandom', (req, res) => {
 
 app.get('/save',  (req, res) => {
     async function guardarDatos() {
-        console.log("Se han guardado 4 Productos nuevos")
+        
         await guardarDatosPrueba();
     }
     guardarDatos();
+    res.send(console.log("Se han guardado 4 Productos nuevos"))
 })
 
 app.get('/delete', (req, res) => {
     async function ejecutar() {
-        console.log("Borrando productos del archivo")
+        
         res.send(await contenedor.deleteAll());
     }
     ejecutar();
+    res.send(console.log("Borrando productos del archivo"))
 })
 
