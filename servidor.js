@@ -57,12 +57,15 @@ async function testeo() {
     await contenedor.save(objetoPrueba3);
     await contenedor.save(objetoPrueba4);
 
-    console.log(await contenedor.getAll())
+    
 
 }
  testeo();
 
 
 app.get('/products', (req, res) => {
-    res.send(await contenedor.getAll());
+    async function ejecutar() {
+        res.send(await contenedor.getAll());
+    }
+    ejecutar();
 })
