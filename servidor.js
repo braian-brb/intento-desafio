@@ -90,10 +90,11 @@ app.get('/productRandom', (req, res) => {
 )
 
 app.get('/save',  (req, res) => {
-    console.log('Se guardaron archivos')
+    
     async function guardarDatos() {
         
         await guardarDatosPrueba();
+        console.log('Se guardaron archivos')
     }
     guardarDatos();
     
