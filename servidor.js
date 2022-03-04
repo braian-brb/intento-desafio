@@ -51,11 +51,15 @@ let objetoPrueba4 = {
     thumbnail: `Imagen Espatula`
 }
 
-async function testeo() {
-    
+async function guardarDatosPrueba() {
+
+    await contenedor.save(objetoPrueba);
+    await contenedor.save(objetoPrueba2);
+    await contenedor.save(objetoPrueba3);
+    await contenedor.save(objetoPrueba4);
     
 }
- testeo();
+ 
 
 
 app.get('/products', (req, res) => {
