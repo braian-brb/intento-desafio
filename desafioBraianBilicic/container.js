@@ -70,7 +70,7 @@ class Container{
 }
     module.exports.Container = Container;
 
-
+/* 
     let objetoPrueba = {
         title: "Pinza Bremen",
         price: 3500,
@@ -122,5 +122,5 @@ const test = async () => {
    
   
   test()
-  
+   */
    
