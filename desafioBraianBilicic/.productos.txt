@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Pinza Bremen",
+    "price": 3500,
+    "thumbnail": "Imagen Pinza Bremen",
+    "id": 1
+  },
+  {
+    "title": "Amoladora Bosch",
+    "price": 9800,
+    "thumbnail": "Imagen Amoladora Bosch",
+    "id": 2
+  },
+  {
+    "title": "Espatula",
+    "price": 250,
+    "thumbnail": "Imagen Espatula",
+    "id": 4
+  }
+]
