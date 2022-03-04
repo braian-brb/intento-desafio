@@ -25,7 +25,7 @@ app.get('/fyh', (req, res) => {
 const modulo = require("./container.js")
 
 
-const contenedor = new modulo.Container("./prueba.txt")
+const contenedor = new modulo.Container("./productos.txt")
 
 let objetoPrueba = {
     title: "Pinza Bremen",
