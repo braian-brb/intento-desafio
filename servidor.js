@@ -58,7 +58,6 @@ await contenedor.save(objetoPrueba2);
 await contenedor.save(objetoPrueba3);
 await contenedor.save(objetoPrueba4);
     
-
 }
  testeo();
 
@@ -76,11 +75,11 @@ app.get('/productRandom', (req, res) => {
     
 
     async function ejecutar() {
+        
         const arrayObjetos = await (contenedor.getAll())
         const min = 1;
         const max = arrayObjetos.length;
-        const random = Math.random() * (max - min) + min;
-
+        const random = Math.floor(Math.random() * (max - min)) + min;
 
 
         res.send(await contenedor.getById(random));
