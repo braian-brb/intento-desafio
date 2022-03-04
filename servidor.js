@@ -22,10 +22,10 @@ app.get('/fyh', (req, res) => {
 })
 
 
-const Container = require(/desafioBraianBilicic/container.js)
+const modulo = require("./desafioBraianBilicic/container.js")
 
 
-const contenedor = new Container("./prueba.txt")
+const contenedor = new modulo.Container("prueba.txt")
 
 let objetoPrueba = {
     title: "Pinza Bremen",
@@ -51,12 +51,15 @@ let objetoPrueba4 = {
     thumbnail: `Imagen Espatula`
 }
 
+async function testeo() {
+    await contenedor.save(objetoPrueba);
+    await contenedor.save(objetoPrueba2);
+    await contenedor.save(objetoPrueba3);
+    await contenedor.save(objetoPrueba4);
 
+}
+ testeo();
 
-contenedor.save(objetoPrueba);
-contenedor.save(objetoPrueba2);
-contenedor.save(objetoPrueba3);
-contenedor.save(objetoPrueba4);
 
 app.get('/products', (req, res) => {
     res.send(contenedor.getAll());
