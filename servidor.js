@@ -52,11 +52,11 @@ let objetoPrueba4 = {
 }
 
 async function testeo() {
-    await contenedor.save(objetoPrueba);
-    await contenedor.save(objetoPrueba2);
-    await contenedor.save(objetoPrueba3);
-    await contenedor.save(objetoPrueba4);
-
+    
+await contenedor.save(objetoPrueba);
+await contenedor.save(objetoPrueba2);
+await contenedor.save(objetoPrueba3);
+await contenedor.save(objetoPrueba4);
     
 
 }
@@ -69,3 +69,27 @@ app.get('/products', (req, res) => {
     }
     ejecutar();
 })
+
+
+app.get('/productRandom', (req, res) => {
+    
+    
+
+    async function ejecutar() {
+        const arrayObjetos = await (contenedor.getAll())
+        const min = 1;
+        const max = arrayObjetos.length;
+        const random = Math.random() * (max - min) + min;
+
+
+
+        res.send(contenedor.getById(random));
+    }
+
+
+
+    ejecutar();
+
+}
+)
+
