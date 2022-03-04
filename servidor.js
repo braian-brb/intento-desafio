@@ -94,7 +94,7 @@ app.get('/save',  (req, res) => {
     async function guardarDatos() {
         
         await guardarDatosPrueba();
-        console.log('Se guardaron archivos')
+        alert('Se guardo')
     }
     guardarDatos();
     
