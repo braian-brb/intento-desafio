@@ -53,10 +53,6 @@ let objetoPrueba4 = {
 
 async function testeo() {
     
-await contenedor.save(objetoPrueba);
-await contenedor.save(objetoPrueba2);
-await contenedor.save(objetoPrueba3);
-await contenedor.save(objetoPrueba4);
     
 }
  testeo();
