@@ -60,13 +60,7 @@ async function guardarDatosPrueba() {
     
 }
 
-app.get('/guardar',  (req, res) => {
-    async function guardarDatos() {
-        await guardarDatosPrueba();
-        res.send(console.log("Se han guardado 4 Productos nuevos"))
-    }
-    guardarDatos();
-})
+
  
 
 
@@ -79,9 +73,6 @@ app.get('/products', (req, res) => {
 
 
 app.get('/productRandom', (req, res) => {
-    
-    
-
     async function ejecutar() {
         
         const arrayObjetos = await (contenedor.getAll())
@@ -93,10 +84,23 @@ app.get('/productRandom', (req, res) => {
         res.send(await contenedor.getById(random));
     }
 
-
-
     ejecutar();
 
 }
 )
+
+app.get('/save',  (req, res) => {
+    async function guardarDatos() {
+        await guardarDatosPrueba();
+        res.send(console.log("Se han guardado 4 Productos nuevos"))
+    }
+    guardarDatos();
+})
+
+app.get('/delete', (req, res) => {
+    async function ejecutar() {
+        res.send(await contenedor.deleteAll());
+    }
+    ejecutar();
+})
 
