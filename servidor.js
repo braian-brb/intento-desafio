@@ -99,6 +99,7 @@ app.get('/save',  (req, res) => {
 
 app.get('/delete', (req, res) => {
     async function ejecutar() {
+        console.log("Borrando productos del archivo")
         res.send(await contenedor.deleteAll());
     }
     ejecutar();
