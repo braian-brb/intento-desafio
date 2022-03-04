@@ -91,8 +91,8 @@ app.get('/productRandom', (req, res) => {
 
 app.get('/save',  (req, res) => {
     async function guardarDatos() {
+        console.log("Se han guardado 4 Productos nuevos")
         await guardarDatosPrueba();
-        res.send(console.log("Se han guardado 4 Productos nuevos"))
     }
     guardarDatos();
 })
