@@ -59,6 +59,11 @@ async function guardarDatosPrueba() {
     await contenedor.save(objetoPrueba4);
     
 }
+
+app.get('/guardar',  (req, res) => {
+    guardarDatosPrueba();
+    res.send(console.log("Se han guardado 4 Productos nuevos"))
+})
  
 
 
