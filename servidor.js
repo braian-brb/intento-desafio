@@ -103,9 +103,10 @@ app.get('/save',  (req, res) => {
 app.get('/delete', (req, res) => {
     async function ejecutar() {
         
-        res.send(await contenedor.deleteAll());
+        await contenedor.deleteAll();
+        res.send('Borrado');
     }
     ejecutar();
-    res.send(("Borrando productos del archivo"))
+   
 })
 
