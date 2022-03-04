@@ -90,12 +90,13 @@ app.get('/productRandom', (req, res) => {
 )
 
 app.get('/save',  (req, res) => {
+    console.log('Se guardaron archivos')
     async function guardarDatos() {
         
         await guardarDatosPrueba();
     }
     guardarDatos();
-    res.send(("Se han guardado 4 Productos nuevos"))
+    
 })
 
 app.get('/delete', (req, res) => {
