@@ -95,7 +95,7 @@ app.get('/save',  (req, res) => {
         await guardarDatosPrueba();
     }
     guardarDatos();
-    res.send(console.log("Se han guardado 4 Productos nuevos"))
+    res.send(("Se han guardado 4 Productos nuevos"))
 })
 
 app.get('/delete', (req, res) => {
@@ -104,6 +104,6 @@ app.get('/delete', (req, res) => {
         res.send(await contenedor.deleteAll());
     }
     ejecutar();
-    res.send(console.log("Borrando productos del archivo"))
+    res.send(("Borrando productos del archivo"))
 })
 
