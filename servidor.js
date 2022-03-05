@@ -75,7 +75,7 @@ async function saveProducts() {
 app.get('/save',  (req, res) => {
     async function saveFunction() {
         await saveProducts();
-        res.send('Saved');
+        res.send('Saved 4 new products');
     }
     saveFunction();
 })
