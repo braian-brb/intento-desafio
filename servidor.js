@@ -40,6 +40,10 @@ let objetoPrueba4 = {
 }
 
 
+app.get('/', (req, res) => {
+    res.send("Desafio Servidor Braian Bilicic")
+})
+
 // Ruta get '/productos' que devuelva un array con todos los productos  
 // disponibles en el servidor
 app.get('/products', (req, res) => {
