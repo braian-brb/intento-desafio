@@ -72,21 +72,19 @@ app.get('/products', (req, res) => {
 })
 
 
-async function productsRandom() {
-    const arrayObjetos = await (contenedor.getAll())
-    const min = 1;
-    const max = arrayObjetos.length;
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+
 
 app.get('/productRandom', (req, res) => {
-    const random = productsRandom();
-    
-    async function res() {
+
+    async function test() {
+        const arrayObjetos = await contenedor.getAll()
+        const min = 1;
+        const max = arrayObjetos.length;
+        const random = Math.floor(Math.random() * (max - min)) + min;
         res.send(await contenedor.getById(random));
     }
     
-    res();
+    test();
 }
 )
 
