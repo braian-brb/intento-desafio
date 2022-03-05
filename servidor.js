@@ -1,31 +1,17 @@
 const express = require('express');
 const moment = require('moment');
 const app = express();
-const PORT = process.env.PORT || 1337;
+const PORT = process.env.PORT || 8080;
 const server = app.listen(PORT, () => {
     console.log(`Listing in port ${server.address().port}`);
 });
 server.on('error', error => console.log(`Error in server ${error}`));
 
-app.get('/', (req, res) => {
-    res.send(' <h1 style="color: blue"> Bienvenidos al servidor express</h1>');
-})
-
-let visits = 0;
-app.get('/visit', (req, res) => {
-    visits++;
-    res.send(`La cantidad de visitas es ${visits}`);
-})
-
-app.get('/fyh', (req, res) => {
-    res.send({fyh: moment().format('YYYY/MM/DD HH:mm:ss')});
-})
-
 
 const modulo = require("./container.js")
 
 
-const contenedor = new modulo.Container("./productos.txt")
+const container = new modulo.Container("./productos.txt")
 
 let objetoPrueba = {
     title: "Pinza Bremen",
@@ -51,14 +37,6 @@ let objetoPrueba4 = {
     thumbnail: `Imagen Espatula`
 }
 
-async function guardarDatosPrueba() {
-
-    await contenedor.save(objetoPrueba);
-    await contenedor.save(objetoPrueba2);
-    await contenedor.save(objetoPrueba3);
-    await contenedor.save(objetoPrueba4);
-    
-}
 
 
  
@@ -66,7 +44,7 @@ async function guardarDatosPrueba() {
 
 app.get('/products', (req, res) => {
     async function ejecutar() {
-        res.send(await contenedor.getAll());
+        res.send(await container.getAll());
     }
     ejecutar();
 })
@@ -77,32 +55,38 @@ app.get('/products', (req, res) => {
 app.get('/productRandom', (req, res) => {
 
     async function test() {
-        const arrayObjetos = await contenedor.getAll()
+        const arrayObjets = await container.getAll()
         const min = 1;
-        const max = arrayObjetos.length;
+        const max = arrayObjets.length;
         const random = Math.floor(Math.random() * (max - min)) + min;
-        res.send(await contenedor.getById(random));
+        res.send(await container.getById(random));
     }
     
     test();
 }
 )
 
+async function saveProductsTest() {
+
+    await container.save(objetoPrueba);
+    await container.save(objetoPrueba2);
+    await container.save(objetoPrueba3);
+    await container.save(objetoPrueba4);
+    
+}
 
 
 app.get('/save',  (req, res) => {
-    async function guardarDatos() {
-        await guardarDatosPrueba();
+    async function saveProducts() {
+        await saveProductsTest();
         res.send('Guardado');
     }
-    guardarDatos();
-    
+    saveProducts();
 })
 
 app.get('/delete', (req, res) => {
     async function ejecutar() {
-        
-        await contenedor.deleteAll();
+        await container.deleteAll();
         res.send('Borrado');
     }
     ejecutar();
