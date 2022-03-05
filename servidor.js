@@ -81,7 +81,7 @@ async function productsRandom() {
 
 app.get('/productRandom', (req, res) => {
     const random = productsRandom();
-    res.send(contenedor.getById(random));
+    res.send(await contenedor.getById(random));
 }
 )
 
