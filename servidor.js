@@ -76,7 +76,7 @@ async function productsRandom() {
     const arrayObjetos = await (contenedor.getAll())
     const min = 1;
     const max = arrayObjetos.length;
-    return random = Math.floor(Math.random() * (max - min)) + min;
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 app.get('/productRandom', (req, res) => {
